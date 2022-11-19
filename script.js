@@ -8,7 +8,7 @@ const userColorChoice = document.getElementById('user-color-choice');
 
 const sliderValue = document.getElementById('value');
 const slider = document.getElementById('myRange');
-
+const sizeBar = document.getElementById('sizebar');
 
 let size = 50;
 
@@ -20,14 +20,15 @@ function setupGrid() {
 setupGrid();
 
 slider.oninput = function() {
+    sizeBar.style.height = `calc(512px / ${size})`
     sliderValue.textContent = this.value;
+    size = (101 - this.value);
 
     const removeSquares = document.querySelectorAll('.square');
     removeSquares.forEach(square => square.remove());
     
     grid.removeAttribute('style');
     grid.style.display = 'grid';
-    size = this.value;
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
     placeSquares();
