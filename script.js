@@ -2,6 +2,7 @@
 const container = document.querySelector('.container');
 const sketch = document.getElementById('sketch');
 const rgbBtn = document.getElementById('rgb');
+const displayGrid = document.getElementById('grid-btn');
 const eraser = document.getElementById('eraser');
 const clearBtn = document.getElementById('clear');
 const userColorChoice = document.getElementById('user-color-choice');
@@ -56,6 +57,9 @@ sketch.addEventListener('click', () => {colorMode = 'sketch'});
 userColorChoice.addEventListener('input', () => {colorMode = 'input-color'});
 eraser.addEventListener('click', () => {colorMode = 'eraser'});
 
+displayGrid.addEventListener('click', () => {
+    allSquares.forEach(square => square.classList.toggle('display-grid'));
+});
 clearBtn.addEventListener('click', () => {
     allSquares.forEach(square => square.style.background = 'none');
 });

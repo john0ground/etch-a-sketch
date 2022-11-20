@@ -11,6 +11,15 @@ body {
 
 header {
     text-align: center;
+    height: 90px;
+}
+
+main {
+    display: flex;
+}
+
+.menu {
+    width: 400px;
 }
 
 .container {
@@ -40,9 +49,10 @@ header {
     box-shadow: 3px 3px 10px;
 }
 
-/* .square {
-    border: 1px solid black;
-} */
+.display-grid {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
 
 button {
     width: 60px;
