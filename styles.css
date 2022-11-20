@@ -7,6 +7,7 @@
 body {
     background-image: url(studio.webp);
     background-size: cover; 
+    font-family: 'Comfortaa';
 }
 
 header {
@@ -14,21 +15,85 @@ header {
     height: 90px;
 }
 
+header > h1 {
+    padding-top: 30px;  
+}
+
 main {
     display: flex;
 }
 
 .menu {
-    width: 400px;
+    width: 350px;
+    margin-right: 70px;
 }
 
+.buttons {
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    row-gap: 20px;
+    margin-left: 20px;
+}
+label {
+    background:rgba(49, 53, 59, 0.5);
+    padding:20px; 
+    border-radius: 10px;
+    text-align: center; 
+}
+
+.size {
+    grid-column: 2 / 4;
+    background: rgba(49, 53, 59, 0.5);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+#value {
+    text-align: center;
+}
+
+.canvas-type {
+    background: rgba(49, 53, 59, 0.5);
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+.paper {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;    
+}
+
+#none {
+    background: white;
+}
+
+#canvas2 {
+    background: url('paper2.webp');
+    background-size: cover;
+}
+
+#canvas3 {
+    background: url('paper3.webp');
+}
 .container {
     border: 1px solid black;
     width: 512px;
     height: 512px;
     margin: auto;
-    background-image: url(paper.webp);
-    background-size: cover;
+    background: white;
 }
 
 .first-painting {
@@ -55,8 +120,8 @@ main {
 }
 
 button {
-    width: 60px;
-    height: 20px;
+    width: 100px;
+    height: 25px;
 }
 
 .slide-container {
@@ -69,6 +134,7 @@ button {
     background: #ccc;
     outline: none;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .sizebar-container {
@@ -79,6 +145,7 @@ button {
     justify-content: center;
     align-items: center;
     margin-left: 20px;
+    margin-top: 10px;
     overflow: hidden;
     border-top: 2px solid white;
     border-bottom: 2px solid white;

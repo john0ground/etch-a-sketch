@@ -11,6 +11,10 @@ const sliderValue = document.getElementById('value');
 const slider = document.getElementById('myRange');
 const sizeBar = document.getElementById('sizebar');
 
+const canvasNone = document.getElementById('none');
+const canvasTwo = document.getElementById('canvas2');
+const canvasThree = document.getElementById('canvas3');
+
 let size = 50;
 
 const grid = document.getElementById('grid');
@@ -38,6 +42,9 @@ slider.oninput = function() {
     newSquares.forEach(square => square.addEventListener('mouseover', changeColor));
     clearBtn.addEventListener('click', () => {
         newSquares.forEach(square => square.style.background = 'none');
+    });
+    displayGrid.addEventListener('click', () => {
+        newSquares.forEach(square => square.classList.toggle('display-grid'));
     });
 }
 
@@ -88,6 +95,18 @@ function randomColor() {
     const b = rgbInteger();
     return `rgb(${r}, ${g}, ${b})`
 }
+
+canvasNone.addEventListener('click', () => {
+    container.style.background = "white";
+});
+canvasTwo.addEventListener('click', () => {
+    container.style.backgroundImage = "url('paper2.webp')";
+    container.style.backgroundSize = 'cover';
+});
+canvasThree.addEventListener('click', () => {
+    container.style.backgroundImage = "url('paper3.webp')"
+    container.style.backgroundSize = 'cover';
+});
 
 const allSquares = document.querySelectorAll('.square');
 allSquares.forEach(square => square.addEventListener('mouseover', changeColor));

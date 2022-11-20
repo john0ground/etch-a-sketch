@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link rel = "stylesheet" href ="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -15,23 +16,33 @@
 
     <main>
         <section class ="menu">
-            <div class ="thickness">
-                <button class="size">Thickness</button>
+            <div class ="buttons">
+                <button id="sketch">sketch</button>
+                <button id="rgb">rgb</button>
+                <label>
+                    <p>Choose:</p>
+                    <input type ="color" id ="user-color-choice">
+                </label>
+                <button id="grid-btn">display grid</button>
+                <button id="clear">clear</button>
+                <button id="eraser">eraser</button>
+                <h3>Size:</h3>
+                <div class="size">
+                    <div class="slide-container">
+                        <input type="range" min="1" max="100" class="slider" id="myRange">
+                        <p id="value">50</p>
+                    </div>
+                    <div class="sizebar-container">
+                        <div id="sizebar"></div>
+                    </div>
+                </div>
             </div>
-            <button id="sketch">sketch</button>
-            <button id="rgb">rgb</button>
-            <button id="grid-btn">display grid</button>
-            <button id="clear">clear</button>
-            <button id="eraser">eraser</button>
-            <input type ="color" id ="user-color-choice">
+            <div class ="canvas-type">
+                <div id="none" class="paper"></div>
+                <div id="canvas2" class="paper"></div>
+                <div id="canvas3" class="paper"></div>
+            </div>
             
-            <div class="slide-container">
-                <input type="range" min="1" max="100" class="slider" id="myRange">
-                <p id="value">50</p>
-            </div>
-            <div class="sizebar-container">
-                <div id="sizebar"></div>
-            </div>
         </section>
         <section class ="canvas">
             <div class="container" id="grid"></div>
